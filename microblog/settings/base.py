@@ -136,9 +136,6 @@ MEDIA_ROOT = root("..","uploads")
 #STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
 STATIC_ROOT = root("..","static")
 STATIC_URL = '/static/'
-STATICFILES_DIRS =[
-	root("assets"),
-]
 TEMPLATE_DIRS =[
 	root("templates"),
 ]
