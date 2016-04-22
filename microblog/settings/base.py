@@ -134,12 +134,12 @@ MEDIA_ROOT = root("..","uploads")
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 #PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
-STATIS_ROOT = root("..","static")
+STATIC_ROOT = root("..","static")
 STATIC_URL = '/static/'
-STATICFILES_DIRS ={
-	root("assets")
-}
+STATICFILES_DIRS =[
+	root("assets"),
+]
 TEMPLATE_DIRS =[
-	root("templates")
+	root("templates"),
 ]
 
