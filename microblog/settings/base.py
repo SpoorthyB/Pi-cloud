@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'dj_database_url.config()',
-	'NAME': os.path.join(BASE_DIR, 'microblog'),
+	'NAME': 'microblog',
        	'USER': 'vagrant',
 	'CONN_MAX_AGE': 500,
     }
