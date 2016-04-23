@@ -84,16 +84,7 @@ WSGI_APPLICATION = 'microblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'dj_database_url.config()',
-	'NAME': 'microblog',
-       	'USER': 'vagrant',
-	'CONN_MAX_AGE': 500,
-    }
-}
-
+DATABASES = {'default' : dj_database_url.config() }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
