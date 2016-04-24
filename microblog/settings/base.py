@@ -34,9 +34,11 @@ root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
 SECRET_KEY = 'q0xmz1^h0b4hfd6+qg928p-j8d=+nbm08hshazv(2y^2u4!2^+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','localhost', '127.0.0.1']
+#COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 
 # Application definition
@@ -49,6 +51,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+THIRD_PARTY_APPS = (
+    
+)
+
+LOCAL_APPS = (
+    
+)
+
+#INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,7 +77,7 @@ ROOT_URLCONF = 'microblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [root("..","templates"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,6 +89,13 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+  
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
 
 WSGI_APPLICATION = 'microblog.wsgi.application'
 
@@ -127,7 +145,4 @@ MEDIA_ROOT = root("..","uploads")
 #STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
 STATIC_ROOT = root("..","static")
 STATIC_URL = '/static/'
-TEMPLATE_DIRS =[
-	root("templates"),
-]
 
